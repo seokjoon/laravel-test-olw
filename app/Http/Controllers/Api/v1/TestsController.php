@@ -89,7 +89,7 @@ class TestsController extends Controller
         $req = $request->xml(); //Log::info($req); Log::info('====');
         $reqMethod = 'mw' . ucfirst(explode('.', $req['methodName'])[1]); Log::info($reqMethod);
         $out = $this->$reqMethod();
-        $tmpl = [ 'template' => '<methodResponse></methodResponse>', 'rowName' => 'member' ];
+        $tmpl = [ 'template' => '<methodResponse></methodResponse>', 'rowName' => ['member'] ];
         $out = response()->xml($out, Response::HTTP_OK, $tmpl); //Log::info($out);
         return $out;
     }
