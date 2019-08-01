@@ -17,4 +17,6 @@
 * https://docs.microsoft.com/ko-kr/previous-versions/web-development/windows-live/bb259697(v=msdn.10)
 * https://codex.wordpress.org/XML-RPC_MetaWeblog_API
 * https://github.com/jailtonsc/laravel-response-xml
+    * https://github.com/seokjoon/laravel-response-xml
+    * https://packagist.org/packages/seokjoon/laravel-response-xml
 * https://github.com/Tucker-Eric/laravel-xml-middleware

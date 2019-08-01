@@ -22,5 +22,6 @@ Route::group(['namespace' => 'Api', 'as' => 'api.', 'middleware' => []], functio
         Route::get('test1', 'TestsController@test1')->name('tests.test1');
         Route::post('test1', 'TestsController@test1')->name('tests.test1');
         Route::get('test2', 'TestsController@test2')->name('tests.test2');
+        Route::get('test3', 'TestsController@test3')->name('tests.test3');
     });
 });

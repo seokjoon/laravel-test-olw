@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
+use XmlResponse\Facades\XmlFacade;
+use XmlResponse\XmlResponse;
 
 //https://docs.microsoft.com/ko-kr/previous-versions/web-development/windows-live/bb259697(v=msdn.10)
 //https://codex.wordpress.org/XML-RPC_MetaWeblog_API
@@ -33,6 +35,7 @@ class TestsController extends Controller
             [ 'name' => 'categoryName', 'value' => 'foo', ],
             [ 'name' => 'description', 'value' => 'foo', ],
         ];
+
         return $out;
     }
 
@@ -101,6 +104,7 @@ class TestsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      * @deprecated TEST
+     * https://github.com/apanly/metaweblog
      */
     public function test2(Request $request)
     {
@@ -125,5 +129,37 @@ class TestsController extends Controller
         //Log::info($target->isError());
 
         return response()->json([ 'data' => $target ], Response::HTTP_OK, [], JSON_PRETTY_PRINT);
+    }
+
+    public function test3()
+    {
+        $out = ['params' => ['param' => ['value' => ['array' => ['data' =>
+            [
+                [
+                    [
+                        [ 'name' => 'foo', 'value' => 1 ],
+                        [ 'name' => 'bar', 'value' => 2 ],
+                    ],
+                    [
+                        [ 'name' => 'foo', 'value' => 1 ],
+                        [ 'name' => 'bar', 'value' => 2 ],
+                    ],
+                ],
+                [
+                    [
+                        [ 'name' => 'foo', 'value' => 1 ],
+                        [ 'name' => 'bar', 'value' => 2 ],
+                    ],
+                    [
+                        [ 'name' => 'foo', 'value' => 1 ],
+                        [ 'name' => 'bar', 'value' => 2 ],
+                    ]
+                ],
+            ]
+        ]]]]];
+
+        $tmpl = [ 'template' => '<methodResponse></methodResponse>', 'rowName' => ['value', 'struct', 'member'] ];
+        $out = response()->xml($out, Response::HTTP_OK, $tmpl);
+        return $out;
     }
 }

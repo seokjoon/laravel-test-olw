@@ -11,9 +11,9 @@
         "php": "^7.1.3",
         "apanly/metaweblog": "dev-master",
         "fideloper/proxy": "^4.0",
-        "jailtonsc/laravel-response-xml": "^3.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "seokjoon/laravel-response-xml": "^3.0",
         "tucker-eric/laravel-xml-middleware": "^1.0"
     },
     "require-dev": {
