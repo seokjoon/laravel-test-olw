@@ -7,13 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
-use XmlResponse\Facades\XmlFacade;
-use XmlResponse\XmlResponse;
 
-//https://docs.microsoft.com/ko-kr/previous-versions/web-development/windows-live/bb259697(v=msdn.10)
-//https://codex.wordpress.org/XML-RPC_MetaWeblog_API
-//https://github.com/jailtonsc/laravel-response-xml
-//https://github.com/Tucker-Eric/laravel-xml-middleware
 class TestsController extends Controller
 {
     public function __construct()
